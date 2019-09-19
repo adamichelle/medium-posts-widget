@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Widget from './Widget';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const el = document.getElementById('medium-posts-widget');
+const rssFeedLink = el.getAttribute('data-medium-rss')
+ReactDOM.render(<Widget mediumRSSFeedLink={rssFeedLink} />, el);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

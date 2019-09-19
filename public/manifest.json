@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Medium Widget",
+  "name": "Medium Posts Widget",
   "icons": [
     {
       "src": "favicon.ico",
