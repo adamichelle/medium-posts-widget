@@ -81,9 +81,7 @@ class Widget extends Component {
     )
     
     return(
-      <div className="container mt-5">
-        <p className="ml-4">Articles from my medium feed {this.props.mediumRSSFeedLink}</p>
-        
+      <div className="container">
         <div id="postsCardCarousels" className="carousel slide" data-ride="carousel" data-interval="false">
           <div className="carousel-inner row w-100 mx-auto" role="listbox">
             {cardCarousels}
