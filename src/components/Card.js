@@ -17,11 +17,11 @@ const shortenText = (text,startingPoint ,maxLength) => {
 function Card(props) {
     return(
         <div className="card">
-            <img src={props.post.thumbnail} className="card-img-top" alt="..."></img>
+            <img src={props.post.thumbnail} className="card-img-top post-thumbnail" alt={props.post.title}></img>
             <div className="card-body">
-                <h5 className="card-title">{props.post.title}</h5>
-                <p className="card-text">{'...' + shortenText(tagToText(props.post.content), 60, 300) + '...'}</p>
-                <a href={props.post.link} className="btn btn-primary">Go somewhere</a>
+                <h5 className="card-title post-title">{props.post.title}</h5>
+                <p className="card-text post-preview">{'...' + shortenText(tagToText(props.post.content), 60, 200) + '...'}</p>
+                <a href={props.post.link} className="btn btn-link-grey">Read this article on Medium.com</a>
             </div>
         </div>
     )

@@ -15,6 +15,7 @@ class Widget extends Component {
     super(props)
     this.state = {
       requestFailed: false,
+      active: 0
     }
   }
 
@@ -43,7 +44,7 @@ class Widget extends Component {
     /*
         Carousel
     */
-    $('#carouselExampleControls').on('slide.bs.carousel', function (e) {
+    $('#postsCardCarousels').on('slide.bs.carousel', function (e) {
       /*
           CC 2.0 License Iatek LLC 2018 - Attribution required
       */
@@ -51,7 +52,7 @@ class Widget extends Component {
       var idx = $e.index();
       var itemsPerSlide = 3;
       var totalItems = $('.carousel-item').length;
-      console.log(totalItems);
+      
       if (idx >= totalItems-(itemsPerSlide-1)) {
           var it = itemsPerSlide - (totalItems - idx);
           for (var i=0; i<it; i++) {
@@ -68,28 +69,30 @@ class Widget extends Component {
   }
 
   render (){
-    if (!this.state.mediumPosts) return <p>Loading...</p>
+    if (!this.state.mediumPosts) return <div className="container mt-5"><p className="ml-4">Loading articles from my medium feed ...</p></div>
     
-    const posts = this.state.mediumPosts
+    const mediumPosts = this.state.mediumPosts
+    const posts = mediumPosts.length > 6 ? mediumPosts.slice(7) : mediumPosts;
+    
     const cardCarousels = posts.map((post, index) => 
-      <div className="carousel-item col-12 col-sm-12 col-md-6 col-lg-4 active" key={index}> 
+      <div className={this.state.active === index ? 'carousel-item col-12 col-sm-12 col-md-6 col-lg-4 active' : 'carousel-item col-12 col-sm-12 col-md-6 col-lg-4'} key={index}> 
         <Card post={post} />
       </div>
     )
     
     return(
-      <div className="container">
-        <h1>{this.state.mediumPosts[0].title}</h1>
-        {console.log(this.state.mediumPosts)}
-        <div id="carouselExampleControls" className="carousel slide" data-ride="carousel" data-interval="false">
+      <div className="container mt-5">
+        <p className="ml-4">Articles from my medium feed {this.props.mediumRSSFeedLink}</p>
+        
+        <div id="postsCardCarousels" className="carousel slide" data-ride="carousel" data-interval="false">
           <div className="carousel-inner row w-100 mx-auto" role="listbox">
             {cardCarousels}
           </div>
-          <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <a className="carousel-control-prev" href="#postsCardCarousels" role="button" data-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="sr-only">Previous</span>
           </a>
-            <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <a className="carousel-control-next" href="#postsCardCarousels" role="button" data-slide="next">
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="sr-only">Next</span>
           </a>

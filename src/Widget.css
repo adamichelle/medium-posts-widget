@@ -1,3 +1,38 @@
+.card-title.post-title {
+  height: 100px;
+}
+
+.card-img-top.post-thumbnail {
+  height: 150px;
+}
+
+.btn-link-grey {
+  color: #333333;
+  text-decoration: underline;
+}
+
+.btn-link-grey:hover {
+  color: #000000;
+  font-weight: 600;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 55px;
+  width: 55px;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  background-color: #444444;
+}
+
+.carousel-control-prev-icon {
+  margin-left: -50px
+}
+
+.carousel-control-next-icon {
+  margin-right: -50px
+}
+
 @media (min-width: 992px) {
   /* Show 4th slide on lg if col-lg-4*/
   .carousel-inner .active.col-lg-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
