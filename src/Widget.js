@@ -69,7 +69,8 @@ class Widget extends Component {
   }
 
   render (){
-    if (!this.state.mediumPosts) return <div className="container mt-5"><p className="ml-4">Loading articles from my medium feed ...</p></div>
+    if (this.state.requestFailed) return <div className="container"><p className="ml-4">Oops! Sorry we couldn't load your medium articles</p></div>
+    if (!this.state.mediumPosts) return <div className="container"><p className="ml-4">Loading articles from my medium feed ...</p></div>
     
     const mediumPosts = this.state.mediumPosts
     const posts = mediumPosts.length > 6 ? mediumPosts.slice(7) : mediumPosts;
