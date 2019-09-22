@@ -9,7 +9,7 @@ It makes use of the [RSStoJSON Converter Online](https://api.rss2json.com/v1/api
 
 
 ## Screenshot
-[[https://res.cloudinary.com/missada/image/upload/v1569182081/my_portfolio/medium_posts_widget.png|alt=MediumPostsWidget]]
+![Medium Posts Widget](https://res.cloudinary.com/missada/image/upload/v1569182081/my_portfolio/medium_posts_widget.png "Medium Posts Slider Widget")
 
 ## Demo
 This is the [link](https://drv.tw/~deladycoda@gmail.com/gd/medium-posts-widget/) to a live version of the widget.
